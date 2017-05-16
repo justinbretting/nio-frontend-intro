@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import actions from './actions';
 import _ from 'lodash';
 
+import OrderList from './order-list.jsx'
+
 class App extends React.Component {
   componentWillMount() {
     nio.source
@@ -17,7 +19,7 @@ class App extends React.Component {
   }
 
   render() {
-    return <div>Some Text</div>
+    return <OrderList orders={this.props.orders} />
   }
 }
 
