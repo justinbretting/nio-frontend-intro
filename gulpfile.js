@@ -19,7 +19,6 @@ var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var moment = require('moment');
 var _ = require('lodash');
-var browserSync = require('browser-sync');
 var fs = require('fs');
 var glob = require('glob');
 var browserifyshim = require('browserify-shim');
@@ -87,16 +86,8 @@ gulp.task('babelify-dev', function() {
 
   bundler.on('update', function() {
     bundle(bundler) // Re-run bundle on source updates
-    .pipe(browserSync.stream());
   });
 
-  browserSync({
-    baseDir: "./public/",
-    proxy: "localhost:3000",
-    port: 5000,
-    notify: true,
-    open: false
-  });
 });
 
 gulp.task('less', function () {
@@ -104,7 +95,6 @@ gulp.task('less', function () {
     .pipe(less())
     .pipe(rename('main.css'))
     .pipe(gulp.dest('./public/css/'))
-    .pipe(browserSync.stream());
 });
 
 gulp.task('watch-less', function() {
