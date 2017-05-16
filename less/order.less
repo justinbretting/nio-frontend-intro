@@ -1,0 +1,44 @@
+
+.order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  // border-bottom: 1px solid @border-light;
+
+  & > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .shopper {
+    text-align: center;
+    width: 20%;
+    background-color: @mid-dark;
+    color: #fff;
+    padding: 1em;
+
+    i {
+      font-size: 3em;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    .name {
+      white-space: nowrap;
+    }
+  }
+
+  .amount {
+    width: 20%;
+    text-align: center;
+    color: @mid-dark;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .cart-summary {
+    width: 30%;
+  }
+}
