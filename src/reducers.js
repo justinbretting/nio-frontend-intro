@@ -18,8 +18,12 @@ module.exports = function(state, action) {
 
   switch (action.type) {
     case 'ADD_ORDER':
+      // limit the number of items displayed to the most recent 20
+      let orders = state.orders.slice(0, 19);
+      orders.unshift(action.order);
+
       return rxupdate(state, {
-        orders: {$push: [action.order]}
+        orders: {$set: orders}
       })
     case 'TOGGLE_ACTIVE_CART_ID':
       return rxupdate(state, {

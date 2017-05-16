@@ -1,5 +1,6 @@
 import Shopper from './shopper.jsx';
 import CartSummary from './cart-summary.jsx';
+import Amount from './amount.jsx';
 
 class Order extends React.Component {
   render() {
@@ -9,9 +10,7 @@ class Order extends React.Component {
       <li className="list-group-item order">
         <Shopper {...shopper} />
         <CartSummary {...this.props} />
-        <div className="amount">
-          <span>${amount}</span>
-        </div>
+        <Amount amount={amount} />
       </li>
     )
   }

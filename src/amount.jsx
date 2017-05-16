@@ -5,7 +5,7 @@ class Amount extends React.Component {
 
     return (
       <div className="amount">
-        <span>${amount}</span>
+        <span>${parseFloat(amount).toFixed(2)}</span>
       </div>
     )
   }
