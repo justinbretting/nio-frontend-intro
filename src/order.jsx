@@ -8,7 +8,7 @@ class Order extends React.Component {
     return (
       <li className="list-group-item order">
         <Shopper {...shopper} />
-        <CartSummary cart={cart} />
+        <CartSummary {...this.props} />
         <div className="amount">
           <span>${amount}</span>
         </div>

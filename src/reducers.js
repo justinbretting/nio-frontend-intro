@@ -11,7 +11,8 @@ export default combineReducers({ ui, tabs, schedules, etc });
 module.exports = function(state, action) {
   if ( typeof state === 'undefined' ) {
     return {
-      orders: []
+      orders: [],
+      activeCartId: undefined
     }
   }
 
@@ -19,6 +20,10 @@ module.exports = function(state, action) {
     case 'ADD_ORDER':
       return rxupdate(state, {
         orders: {$push: [action.order]}
+      })
+    case 'TOGGLE_ACTIVE_CART_ID':
+      return rxupdate(state, {
+        activeCartId: {$set: action.cartId === state.activeCartId ? undefined : action.cartId }
       })
     default:
       return state
