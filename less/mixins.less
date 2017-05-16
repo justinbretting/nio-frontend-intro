@@ -1,0 +1,56 @@
+
+.cover {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fill-bottom {
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.fill-left {
+  bottom:0;
+  left:0;
+  top: 0;
+}
+
+.fill-right {
+  bottom:0;
+  right:0;
+  top: 0;
+}
+
+.fill-top {
+  top:0;
+  left:0;
+  right:0;
+}
+
+.pos-fill-bottom(@pos) {
+  position: @pos;
+  .fill-bottom();
+}
+
+.pos-fill-top(@pos) {
+  position: @pos;
+  .fill-top();
+}
+
+.default-transition {
+  transition: all 200ms ease-in;
+}
+
+.translucent-background(@color) {
+  &:before {
+    content: '';
+    position: absolute;
+    .cover();
+    background-color: @color;
+    opacity: 0.7;
+    z-index: -1;
+  }
+}

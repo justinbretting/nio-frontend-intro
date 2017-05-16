@@ -1,0 +1,14 @@
+*~
+scrap.txt
+node_modules
+.DS_Store
+public/scripts/*
+public/css/main*.css
+public/css/vendor*.css
+public/main*.js
+public/index.html
+public/config*.js
+.env
+newrelic_agent.log
+coverage/*
+dist/*
