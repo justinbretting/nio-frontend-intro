@@ -7,6 +7,10 @@ Make sure you have gulp installed
 
 `npm i -g gulp`
 
+Install dependencies
+
+`npm i`
+
 Create the web bundle
 
 `gulp bundle-dev`
