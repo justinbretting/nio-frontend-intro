@@ -2,6 +2,7 @@
 # Installation instructions
 
 Unzip to a local web directory
+
 Make sure you have gulp installed
 
 `npm i -g gulp`
